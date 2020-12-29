@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public int magSize;
-    public float cooldown;
+    private int magSize;
+    private float cooldown;
 
     private int currMag;
     private float timeStamp;
@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+<<<<<<< Updated upstream
     void Shoot()
     {
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
@@ -64,6 +65,16 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Enemy Hit!");
             hit.collider.GetComponent<Enemy>().destroyEnemy();
         }
+=======
+    public int getMagSize()
+    {
+        return magSize;
+    }
+
+    public int getCurrMag()
+    {
+        return currMag;
+>>>>>>> Stashed changes
     }
 
     void Reload()
@@ -72,7 +83,6 @@ public class PlayerController : MonoBehaviour
         audioSource.Play();
         currMag = magSize;
         timeStamp = Time.time + cooldown;
-        Debug.Log("Reloaded");
         ammo.DisplayReload();
     }
 
