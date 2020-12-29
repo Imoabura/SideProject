@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float cooldown;
 
     private int currMag;
-    private float timeStamp = Time.time;
+    private float timeStamp;
     AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         currMag = magSize;
+        timeStamp = Time.time;
     }
 
     // Update is called once per frame
