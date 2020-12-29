@@ -297,6 +297,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crosshair
       objectReference: {fileID: 0}
+    - target: {fileID: 4225065169698391093, guid: 5f634427504d06a4293a969203915fe8,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4225065169698391093, guid: 5f634427504d06a4293a969203915fe8,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4225065169698391093, guid: 5f634427504d06a4293a969203915fe8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6021ecec80f1b3c4aa8793449678843f,
+        type: 3}
+    - target: {fileID: 4225065169698391093, guid: 5f634427504d06a4293a969203915fe8,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4225065169698391094, guid: 5f634427504d06a4293a969203915fe8,
         type: 3}
       propertyPath: m_RootOrder
