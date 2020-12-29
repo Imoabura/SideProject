@@ -5,7 +5,6 @@ using UnityEngine;
 public class CrosshairMovement : MonoBehaviour
 {
     [SerializeField]
-    float moveSpeed;
     Transform crosshair;
 
     // Start is called before the first frame update
