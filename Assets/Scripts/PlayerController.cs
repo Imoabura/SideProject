@@ -68,6 +68,8 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Enemy Hit!");
             hit.collider.GetComponent<Enemy>().destroyEnemy();
         }
+
+        ammo.DisplayShoot();
     }
 
     public int getMagSize()
