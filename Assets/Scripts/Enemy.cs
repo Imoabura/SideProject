@@ -16,8 +16,8 @@ public class Enemy : MonoBehaviour
 
     }
 
-    void destroyEnemy()
+    public void destroyEnemy()
     {
-        Destroy(gameObject);
+        Destroy(this.transform.parent.gameObject);
     }
 }

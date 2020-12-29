@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2599536995230003571}
   - component: {fileID: 3490962323520546533}
   - component: {fileID: 3957747553562898949}
+  - component: {fileID: 6926165794044311967}
   m_Layer: 0
   m_Name: RedPrefab
   m_TagString: Untagged
@@ -109,6 +110,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seconds: 10
   fadeTrigger: 0.5
+--- !u!58 &6926165794044311967
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5934928852791450839}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.875
 --- !u!1 &7099818196170160653
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +137,7 @@ GameObject:
   - component: {fileID: 7099818196170160654}
   m_Layer: 0
   m_Name: RedEnemyParent
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
