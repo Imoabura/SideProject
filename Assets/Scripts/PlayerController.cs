@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
     private int magSize;
+    [SerializeField]
     private float cooldown;
 
     private int currMag;
@@ -50,6 +52,8 @@ public class PlayerController : MonoBehaviour
         {
             if (timeStamp <= Time.time)
             {
+                audioSource.clip = reloadSFX;
+                audioSource.Play();
                 Reload();
             }
         }
@@ -78,8 +82,6 @@ public class PlayerController : MonoBehaviour
 
     void Reload()
     {
-        audioSource.clip = reloadSFX;
-        audioSource.Play();
         currMag = magSize;
         timeStamp = Time.time + cooldown;
         ammo.DisplayReload();
