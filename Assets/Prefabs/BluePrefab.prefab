@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6614695285679437622}
   - component: {fileID: -3283076438011287422}
   - component: {fileID: -3555568200962266926}
+  - component: {fileID: -2286690908879431858}
   m_Layer: 0
   m_Name: BluePrefab
   m_TagString: Untagged
@@ -141,3 +142,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-2286690908879431858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5938440282809546070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 805940b7520ac8940ad9fae8506951e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seconds: 10
+  fadeTrigger: 0.5

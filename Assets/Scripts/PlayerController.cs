@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             //audioSource.Stop();
-            if (currMag > 1 && timeStamp <= Time.time)
+            if (currMag >= 1 && timeStamp <= Time.time)
             {
                 audioSource.Play();
                 currMag--;

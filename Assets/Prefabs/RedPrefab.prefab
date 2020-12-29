@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3597602201272321794}
   - component: {fileID: 5085960460677266610}
   - component: {fileID: -3245410103661892828}
+  - component: {fileID: -3140379592288911420}
   m_Layer: 0
   m_Name: RedPrefab
   m_TagString: Untagged
@@ -94,3 +95,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eb0a8170db3f0f44880cb46b6ec3fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3140379592288911420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3520272640351392022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 805940b7520ac8940ad9fae8506951e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seconds: 10
+  fadeTrigger: 0.5
