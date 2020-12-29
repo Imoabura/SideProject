@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1644334263118725934}
   - component: {fileID: 4747415601256657359}
   - component: {fileID: -5902343155399038650}
+  - component: {fileID: -5245391440632234240}
   m_Layer: 0
   m_Name: YellowPrefab
   m_TagString: Untagged
@@ -94,3 +95,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eb0a8170db3f0f44880cb46b6ec3fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &-5245391440632234240
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3748430026727911796}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d75ddf5aedefda340bf5920f98845cda, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
