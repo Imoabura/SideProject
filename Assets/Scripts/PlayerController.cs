@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public int magSize;
-    
+    public int magSize;    
     public float cooldown;
+
+    private int currMag;
     private float timeStamp = Time.time;
     AudioSource audioSource;
 
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        currMag = magSize;
     }
 
     // Update is called once per frame
@@ -21,17 +23,25 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            audioSource.Stop();
-            if (magSize > 1 && timeStamp <= Time.time)
+            //audioSource.Stop();
+            if (currMag > 1 && timeStamp <= Time.time)
             {
                 audioSource.Play();
-                magSize--;
+                currMag--;
                 timeStamp = Time.time + cooldown;
             }
 
             else
             {
-                //click. 
+                //click. s
+            }
+        }
+        if (Input.GetButtonDown("Jump"))
+        {
+            if (timeStamp <= Time.time)
+            {
+                currMag = magSize;
+                timeStamp = Time.time + cooldown;
             }
         }
     }
