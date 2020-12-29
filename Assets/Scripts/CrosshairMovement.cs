@@ -12,14 +12,14 @@ public class CrosshairMovement : MonoBehaviour
     void Start()
     {
         crosshair = this.gameObject.transform;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float verticalMove = Input.GetAxisRaw("Mouse Y");
-        float horizontalMove = Input.GetAxisRaw("Mouse X");
-
-        crosshair.position += new Vector3(horizontalMove, verticalMove).normalized * moveSpeed * Time.deltaTime;
+        Vector3 newPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        newPos.z = 0;
+        crosshair.position = newPos;
     }
 }
