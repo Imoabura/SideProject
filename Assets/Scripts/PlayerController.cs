@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public int magSize;    
+    public int magSize;
     public float cooldown;
 
     private int currMag;
     private float timeStamp;
     AudioSource audioSource;
+
+    public AmmoDisplay ammo;
 
     // Start is called before the first frame update
     void Start()
@@ -41,10 +43,17 @@ public class PlayerController : MonoBehaviour
         {
             if (timeStamp <= Time.time)
             {
-                currMag = magSize;
-                timeStamp = Time.time + cooldown;
+                Reload();
             }
         }
+    }
+
+    void Reload()
+    {
+        currMag = magSize;
+        timeStamp = Time.time + cooldown;
+        Debug.Log("Reloaded");
+        ammo.DisplayReload();
     }
 
 }
