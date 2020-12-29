@@ -167,9 +167,9 @@ MonoBehaviour:
   delayBetweenWaves: 10
   enemiesPerWave: 3
   delayPerEnemy: 2
-  enemyPrefabYellow: {fileID: 3748430026727911796, guid: 79e3a207de9cca74181ecf4950b3e590,
+  enemyPrefabYellow: {fileID: 8165192440791798328, guid: 22192cab53de09a41a4b8b6206c99dce,
     type: 3}
-  enemyPrefabBlue: {fileID: 5938440282809546070, guid: 15702b5bd438b1f42a8e5ee9e2232bdc,
+  enemyPrefabBlue: {fileID: 499815310860405806, guid: 95cb68c1cae75ce4ea9373c6652a80aa,
     type: 3}
 --- !u!1 &874850390
 GameObject:

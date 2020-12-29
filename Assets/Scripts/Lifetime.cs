@@ -32,7 +32,7 @@ public class Lifetime : MonoBehaviour
 
         if (elapsedTime >= seconds) // end of life reached
         {
-            Destroy(this.gameObject);
+            Destroy(this.transform.parent.gameObject);
         }
     }
 
