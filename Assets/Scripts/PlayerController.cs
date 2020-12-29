@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public int magSize;
+    
+    public float cooldown;
+    private float timeStamp = Time.time;
     AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -18,7 +22,18 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             audioSource.Stop();
-            audioSource.Play();
+            if (magSize > 1 && timeStamp <= Time.time)
+            {
+                audioSource.Play();
+                magSize--;
+                timeStamp = Time.time + cooldown;
+            }
+
+            else
+            {
+                //click. 
+            }
         }
     }
+
 }
