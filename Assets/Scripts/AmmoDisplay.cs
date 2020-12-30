@@ -49,7 +49,7 @@ public class AmmoDisplay : MonoBehaviour
             GameObject bully = Instantiate(bulletUIPrefab, transform, false);
             preV = new Vector3(0, currentY, 0);
             bully.transform.position = bully.transform.position + preV;
-            currentY += 0.7f;
+            currentY += 1f;
             Debug.Log("Bullet created");
         }
     }

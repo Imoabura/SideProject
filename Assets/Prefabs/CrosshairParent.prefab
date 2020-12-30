@@ -195,6 +195,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crosshair: {fileID: 0}
+  xAmplitude: 0.5
+  yAmplitude: 0.3
+  xFrequency: 1
+  yFrequency: 2
 --- !u!114 &7956818754858389562
 MonoBehaviour:
   m_ObjectHideFlags: 0
