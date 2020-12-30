@@ -98,7 +98,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b28539141b83dc745a1eb099f5667b43, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -199,6 +199,7 @@ MonoBehaviour:
   yAmplitude: 0.3
   xFrequency: 1
   yFrequency: 2
+  breathMultiplier: 0.1
 --- !u!114 &7956818754858389562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,7 +381,7 @@ GameObject:
   - component: {fileID: 7956818756383366168}
   m_Layer: 0
   m_Name: CrosshairParent
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

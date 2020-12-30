@@ -19,6 +19,15 @@ public class PlayerController : MonoBehaviour
     AudioClip reloadSFX;
 
     public AmmoDisplay ammo;
+    bool isHoldingBreath = false;
+
+    [SerializeField]
+    float drainSpeed = .2f;
+    [SerializeField]
+    float refillSpeed = .13f;
+
+    bool isRecharging = false;
+    float fillAmount = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +57,30 @@ public class PlayerController : MonoBehaviour
                 //click. s
             }
         }
-        if (Input.GetButtonDown("Jump"))
+
+        isHoldingBreath = Input.GetButton("Jump") && !isRecharging;
+
+        if (isHoldingBreath)
+        {
+            fillAmount -= drainSpeed * Time.deltaTime;
+        }
+        else
+        {
+            fillAmount += drainSpeed * Time.deltaTime;
+        }
+
+        fillAmount = Mathf.Clamp(fillAmount, 0f, 1f);
+
+        if (fillAmount <= 0)
+        {
+            isRecharging = true;
+        }
+        else if (fillAmount >= 1)
+        {
+            isRecharging = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
         {
             if (timeStamp <= Time.time)
             {
@@ -80,6 +112,16 @@ public class PlayerController : MonoBehaviour
     public int getCurrMag()
     {
         return currMag;
+    }
+
+    public bool getIsHoldingBreath()
+    {
+        return isHoldingBreath;
+    }
+
+    public float getFillAmount()
+    {
+        return fillAmount;
     }
 
     void Reload()

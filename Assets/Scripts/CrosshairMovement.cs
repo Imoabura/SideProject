@@ -14,12 +14,19 @@ public class CrosshairMovement : MonoBehaviour
     float xFrequency = 1f;
     [SerializeField]
     float yFrequency = 2f;
+    [SerializeField]
+    float breathMultiplier = .1f;
+    
+    float currentValue = 0f;
+
+    PlayerController playerController;
 
     // Start is called before the first frame update
     void Start()
     {
         crosshair = this.gameObject.transform;
         Cursor.visible = false;
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerController>();
     }
 
     // Update is called once per frame
@@ -29,19 +36,28 @@ public class CrosshairMovement : MonoBehaviour
         newPos.z = 0;
         crosshair.transform.parent.position = newPos; // parent is always in correct position
 
-        if (true) // To-Do: Replace true with isHoldingBreath boolean
-        {
-            BobEffect();
-        }
-        else
-        {
-            transform.position = Vector3.zero;
-        }
-        
+        BobEffect();
     }
 
     void BobEffect()
     {
-        transform.localPosition = new Vector3(Mathf.Sin(xFrequency * Time.time) * xAmplitude, Mathf.Sin(yFrequency * Time.time) * yAmplitude, 0);
+        float xPos = Mathf.Sin(xFrequency * Time.time) * xAmplitude;
+        float yPos = Mathf.Sin(yFrequency * Time.time) * yAmplitude;
+        
+        if (playerController.getIsHoldingBreath())
+        {
+            currentValue += .5f * Time.deltaTime;
+        }
+        else
+        {
+            currentValue -= .5f * Time.deltaTime;
+        }
+
+        currentValue = Mathf.Clamp(currentValue, 0f, 1f);
+        
+        xPos *= Mathf.Lerp(1f, breathMultiplier, currentValue);
+        yPos *= Mathf.Lerp(1f, breathMultiplier, currentValue);
+
+        transform.localPosition = new Vector3(xPos, yPos, 0);
     }
 }

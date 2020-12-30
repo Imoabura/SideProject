@@ -671,6 +671,7 @@ MonoBehaviour:
   bulletUIPrefab: {fileID: 1640871091215317674, guid: 3e37829672a8aa54ca249bd75fff5773,
     type: 3}
   pc: {fileID: 250}
+  breathBar: {fileID: 140576248}
 --- !u!114 &1840467277
 MonoBehaviour:
   m_ObjectHideFlags: 0

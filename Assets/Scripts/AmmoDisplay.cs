@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AmmoDisplay : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class AmmoDisplay : MonoBehaviour
 
     private Vector3 preV;
 
+    public Image breathBar;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +24,7 @@ public class AmmoDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        breathBar.fillAmount = pc.getFillAmount();
     }
 
     public void DisplayShoot()
