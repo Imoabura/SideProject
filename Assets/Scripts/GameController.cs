@@ -57,20 +57,26 @@ public class GameController : MonoBehaviour
         Vector3 randomPos = Vector3.zero;
         float randomX = 0f;
         float randomY = 0f;
-        switch(index)
-        {
-            default:
-            case 0:
-                randomY = Random.Range(-4.5f, 4.5f);
-                randomPos = new Vector3(0, randomY, 0);
-                break;
-            case 1:
-                randomX = Random.Range(-7.5f, 7.5f);
-                randomY = Random.Range(-2.5f, 2.5f);
-                randomPos = new Vector3(randomX, randomY, 0);
-                break;
-        }
+
+        //switch(index)
+        //{
+        //    default:
+        //    case 0:
+        //        randomY = Random.Range(-4.5f, 4.5f);
+        //        randomPos = new Vector3(0, randomY, 0);
+        //        break;
+        //    case 1:
+        //        randomX = Random.Range(-7.5f, 7.5f);
+        //        randomY = Random.Range(-2.5f, 2.5f);
+        //        randomPos = new Vector3(randomX, randomY, 0);
+        //        break;
+        //}
+
+        randomX = Random.Range(-7.5f, 7.5f);
+        randomY = Random.Range(-2.5f, 2.5f);
+        randomPos = new Vector3(randomX, randomY, 0);
 
         GameObject instance = Instantiate(enemy, randomPos, Quaternion.identity);
+        instance.transform.localScale = new Vector3(.3f, .3f, 1);
     }
 }
