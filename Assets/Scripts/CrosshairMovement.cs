@@ -19,6 +19,6 @@ public class CrosshairMovement : MonoBehaviour
     {
         Vector3 newPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         newPos.z = 0;
-        crosshair.position = newPos;
+        crosshair.transform.parent.position = newPos;
     }
 }

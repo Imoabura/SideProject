@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
 
     void Shoot()
     {
-        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, Vector2.zero);
 
         if (hit.collider != null && hit.collider.tag == "Enemy")
         {
