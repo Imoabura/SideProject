@@ -124,6 +124,11 @@ public class PlayerController : MonoBehaviour
         return fillAmount;
     }
 
+    public bool getIsRecharging()
+    {
+        return isRecharging;
+    }
+
     void Reload()
     {
         currMag = magSize;

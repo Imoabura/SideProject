@@ -25,6 +25,37 @@ public class AmmoDisplay : MonoBehaviour
     void Update()
     {
         breathBar.fillAmount = pc.getFillAmount();
+        ColorUpdate();
+    }
+
+    void ColorUpdate()
+    {
+        if(!pc.getIsRecharging())
+        {
+            if(breathBar.fillAmount < 0.5f)
+            {
+                breathBar.color = Color.Lerp(Color.red, Color.yellow, breathBar.fillAmount * 2);
+            }
+            else
+            {
+                breathBar.color = Color.Lerp(Color.yellow, Color.green, ColorLerper(0.5f, 1, 0, 1, breathBar.fillAmount));
+            }
+            //breathBar.color = Color.Lerp(Color.red, Color.green, breathBar.fillAmount);
+        }
+    }
+
+    float ColorLerper(float oldMin, float oldMax, float newMin, float newMax, float value)
+    {
+        if(value <= oldMin)
+        {
+            return oldMin;
+        }
+        else if (value >= oldMax)
+        {
+            return oldMax;
+        }
+
+        return ((value - oldMin) / (oldMax - oldMin)) * (newMax - newMin) + newMin;
     }
 
     public void DisplayShoot()
@@ -36,7 +67,7 @@ public class AmmoDisplay : MonoBehaviour
             Destroy(transform.GetChild(cc - 1).gameObject);
         }
     }
-    
+
     public void DisplayReload()
     {
         currentY = startY;
