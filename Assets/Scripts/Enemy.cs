@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    Animator animator;
 
+    // Start is called before the first frame update
+    void Awake()
+    {
+        animator = GetComponent<Animator>();       
     }
 
     // Update is called once per frame
@@ -19,5 +21,10 @@ public class Enemy : MonoBehaviour
     public void destroyEnemy()
     {
         Destroy(this.transform.parent.gameObject);
+    }
+
+    public void increaseSpeed()
+    {
+        animator.speed = 3f;
     }
 }

@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     AudioClip shootSFX;
     [SerializeField]
     AudioClip reloadSFX;
+    [SerializeField]
+    AudioClip longReloadSFX;
 
     public AmmoDisplay ammo;
     bool isHoldingBreath = false;
@@ -62,11 +64,11 @@ public class PlayerController : MonoBehaviour
 
         if (isHoldingBreath)
         {
-            fillAmount -= drainSpeed * Time.deltaTime;
+            fillAmount -= calculateDrainSpeed() * Time.deltaTime;
         }
         else
         {
-            fillAmount += drainSpeed * Time.deltaTime;
+            fillAmount += refillSpeed * Time.deltaTime;
         }
 
         fillAmount = Mathf.Clamp(fillAmount, 0f, 1f);
@@ -84,20 +86,38 @@ public class PlayerController : MonoBehaviour
         {
             if (timeStamp <= Time.time)
             {
-                audioSource.clip = reloadSFX;
-                audioSource.Play();
+                if (GameController.IsSymptomFatigue())
+                {
+                    audioSource.clip = longReloadSFX; 
+                    timeStamp = Time.time + cooldown + .65f;
+                }
+                else
+                {
+                    audioSource.clip = reloadSFX;
+                    timeStamp = Time.time + cooldown;
+                }
                 Reload();
             }
         }
     }
 
+    float calculateDrainSpeed()
+    {
+        if (GameController.IsSymptomCoughing())
+        {
+            return drainSpeed * 2f;
+        }
+        else
+        {
+            return drainSpeed;
+        }
+    }
     void Shoot()
     {
         RaycastHit2D hit = Physics2D.Raycast(this.transform.position, Vector2.zero);
 
         if (hit.collider != null && hit.collider.tag == "Enemy")
         {
-            Debug.Log("Enemy Hit!");
             hit.collider.GetComponent<Enemy>().destroyEnemy();
         }
 
@@ -131,8 +151,8 @@ public class PlayerController : MonoBehaviour
 
     void Reload()
     {
+        audioSource.Play();
         currMag = magSize;
-        timeStamp = Time.time + cooldown;
         ammo.DisplayReload();
     }
 
