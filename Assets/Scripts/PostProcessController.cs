@@ -42,5 +42,7 @@ public class PostProcessController : MonoBehaviour
     void UpdateLensDistortion()
     {
         lensDistortion.intensity.value = Mathf.Sin(Time.time * 4f) * .2f;
+        lensDistortion.yMultiplier.value = Random.Range(.5f, 1f);
+        lensDistortion.xMultiplier.value = Random.Range(.5f, 1f);
     }
 }
