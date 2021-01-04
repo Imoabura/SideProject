@@ -36,7 +36,8 @@ public class GameController : MonoBehaviour
         coughing,       // 0
         fever,          // 1
         fatigue,        // 2
-        max_symptoms    // 3
+        headache,       // 3
+        max_symptoms    // 4
     }
     // symptoms[0] = coughing
     // symptoms[1] = fever
@@ -151,5 +152,9 @@ public class GameController : MonoBehaviour
     public static bool IsSymptomFatigue()
     {
         return symptoms[(int)Symptoms.fatigue];
+    }
+    public static bool IsSymptomHeadache()
+    {
+        return symptoms[(int)Symptoms.headache];
     }
 }
