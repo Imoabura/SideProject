@@ -12,8 +12,8 @@ public class PostProcessController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        vindiesel = GetComponent<Vignette>();
-        lenny = GetComponent<LensDistortion>();
+        //vindiesel = GetComponent<Vignette>();
+        //lenny = GetComponent<LensDistortion>();
     }
 
     // Update is called once per frame
@@ -21,16 +21,16 @@ public class PostProcessController : MonoBehaviour
     {
         if(GameController.IsSymptomHeadache())
         {
-            s
+
         }
     }
 
-    UpdateVignette()
+    void UpdateVignette()
     {
 
     }
 
-    UpdateLensDistortion()
+    void UpdateLensDistortion()
     {
 
     }
